@@ -11,6 +11,7 @@
                         <th>Nombre</th>
                         <th>Telefono</th>
                         <th>Correo</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,15 @@
                         <td>{{ $cliente->nombre }}</td>
                         <td>{{ $cliente->telefono }}</td>
                         <td>{{ $cliente->correo }}</td>
+                        <td>
+                            <form action="{{ url('/eliminar',$cliente->id_cliente)}}" method="POST">
+                                @csrf 
+                                @method('DELETE')
+                                <button type="submit" onclick="return confirm('¿Desea eliminar al cliente?');" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button> 
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -28,4 +28,10 @@ class clientesController extends Controller
         Clientes::insert($userdata);
         return back()->with('clienteGuardado','Ciente Guardado');
     }
+    //eliminar cliente
+    public function delete($id){
+        Clientes::destroy($id);
+        return back()->with('clienteEliminado','Cliente Eliminado');
+
+    }
 }

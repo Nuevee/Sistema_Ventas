@@ -18,3 +18,5 @@ Route::get('/','App\Http\Controllers\ClientesController@listar');
 Route::get('/clientes','App\Http\Controllers\ClientesController@clientesform');
 //guardar clientes
 Route::post('/guardar','App\Http\Controllers\ClientesController@guardar')->name('guardar');
+//ELIMIAR CLIENTES
+Route::post('/eliminar','App\Http\Controllers\ClientesController@delete')->name('delete');
