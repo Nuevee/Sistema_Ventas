@@ -136,8 +136,22 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'nombre' => [
+            'required' => 'El nombre es requerido',
+            'string' => 'El nombre debe ser un texto',
+            'max:255' => 'El nombre es muy largo'
+        ],
+        'correo' => [
+            'required' => 'El correo es requerido',
+            'string' => 'El correo debe ser un texto',
+            'max:255' => 'El correo es muy largo',
+            'email'=> 'El formato del correo es incorrecto',
+            'unique'=> 'El correo ya existe'
+        ],
+        'telefono' => [
+            'required' => 'El telefono es requerido',
+            'numeric' => 'El telefono debe ser tipo numerico',
+            'min:9'=> 'El numero telefonico esta incompleto'
         ],
     ],
 

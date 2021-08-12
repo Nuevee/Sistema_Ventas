@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('clientes.listar');
 });
+
+Route::get('/clientes','App\Http\Controllers\ClientesController@clientesform');
+Route::post('/guardar','App\Http\Controllers\ClientesController@guardar')->name('guardar');
