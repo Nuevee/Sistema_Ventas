@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class clientesController extends Controller
 {
+
+    //listado de clientes
+    public function listar(){
+        $data['clientes']= Clientes::paginate(3);
+        return view('clientes.listar',$data);
+    }
     //formulario cliente
     public function clientesform(){
         return view('clientes.clientesform');

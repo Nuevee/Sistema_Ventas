@@ -12,10 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('clientes.listar');
-});
-
+//listar clientes
+Route::get('/','App\Http\Controllers\ClientesController@listar');
+//formulario de clientes
 Route::get('/clientes','App\Http\Controllers\ClientesController@clientesform');
+//guardar clientes
 Route::post('/guardar','App\Http\Controllers\ClientesController@guardar')->name('guardar');
