@@ -29,9 +29,22 @@ class clientesController extends Controller
         return back()->with('clienteGuardado','Ciente Guardado');
     }
     //eliminar cliente
-    public function delete($id_cliente){
+    public function eliminar($id_cliente){
         Clientes::destroy($id_cliente);
         return back()->with('clienteEliminado','Cliente Eliminado');
 
+    }
+    //editar cliente
+    public function editar($id_cliente){
+        $cliente = Clientes::findOrFail($id_cliente);
+        return view('clientes.editarform',compact('cliente'));
+
+    }
+
+    public function edit(Request $request, $id_cliente){
+        $datosCliente = request()->except((['_token','_method']));
+        Clientes::where('id_cliente', '=', $id_cliente)->update($datosCliente);
+
+        return back()->with('clienteModificado','Cliente Modificado');
     }
 }

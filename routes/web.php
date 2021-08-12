@@ -19,4 +19,8 @@ Route::get('/clientes','App\Http\Controllers\ClientesController@clientesform');
 //guardar clientes
 Route::post('/guardar','App\Http\Controllers\ClientesController@guardar')->name('guardar');
 //ELIMIAR CLIENTES
-Route::delete('/delete/{id_cliente}','App\Http\Controllers\ClientesController@delete')->name('delete');
+Route::delete('/eliminar/{id_cliente}','App\Http\Controllers\ClientesController@eliminar')->name('eliminar');
+//actulizar clientes
+Route::get('/editar/{id_cliente}','App\Http\Controllers\ClientesController@editar')->name('editar');
+//edicion de clientes
+Route::patch('/edit/{id_cliente}','App\Http\Controllers\ClientesController@edit')->name('edit');

@@ -26,7 +26,7 @@
                         <td>{{ $cliente->telefono }}</td>
                         <td>{{ $cliente->correo }}</td>
                         <td>
-                            <form action="{{ route('delete',$cliente->id_cliente)}}" method="POST">
+                            <form action="{{ route('eliminar',$cliente->id_cliente)}}" method="POST">
                                 @csrf 
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('¿Desea eliminar al cliente?');" class="btn btn-danger">
