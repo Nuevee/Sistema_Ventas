@@ -4,7 +4,12 @@
         <div class="col-md-10">
             <h2 class="text-center mb-5">Clientes</h2>
         <a class="btn btn-success mb-4" href="{{ url('/clientes')}}">Agregar cliente</a>
-
+        <!-- Mensaje -->
+        @if(session('clienteEliminado'))
+        <div class="alert alert-success">
+        {{ session('clienteEliminado')}}
+        </div>
+        @endif
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
@@ -21,7 +26,7 @@
                         <td>{{ $cliente->telefono }}</td>
                         <td>{{ $cliente->correo }}</td>
                         <td>
-                            <form action="{{ url('/eliminar',$cliente->id_cliente)}}" method="POST">
+                            <form action="{{ route('delete',$cliente->id_cliente)}}" method="POST">
                                 @csrf 
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('¿Desea eliminar al cliente?');" class="btn btn-danger">

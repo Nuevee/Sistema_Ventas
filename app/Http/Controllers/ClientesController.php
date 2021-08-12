@@ -29,8 +29,8 @@ class clientesController extends Controller
         return back()->with('clienteGuardado','Ciente Guardado');
     }
     //eliminar cliente
-    public function delete($id){
-        Clientes::destroy($id);
+    public function delete($id_cliente){
+        Clientes::destroy($id_cliente);
         return back()->with('clienteEliminado','Cliente Eliminado');
 
     }
