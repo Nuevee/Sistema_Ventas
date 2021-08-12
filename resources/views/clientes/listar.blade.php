@@ -26,6 +26,9 @@
                         <td>{{ $cliente->telefono }}</td>
                         <td>{{ $cliente->correo }}</td>
                         <td>
+                            <a href="{{route('editar',$cliente->id_cliente)}}" class="btn btn-primary mb-1">
+                                <i class="fas fa-pencil-alt"></i>
+                            </a>
                             <form action="{{ route('eliminar',$cliente->id_cliente)}}" method="POST">
                                 @csrf 
                                 @method('DELETE')
