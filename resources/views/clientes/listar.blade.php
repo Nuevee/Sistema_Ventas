@@ -3,14 +3,14 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <h2 class="text-center mb-5">Clientes</h2>
-        <a class="btn btn-success mb-4" href="{{ url('/clientes')}}">Agregar cliente</a>
+        <a class="btn btn-primary mb-4" href="{{ url('/clientes')}}">Agregar cliente</a>
         <!-- Mensaje -->
         @if(session('clienteEliminado'))
         <div class="alert alert-success">
         {{ session('clienteEliminado')}}
         </div>
         @endif
-            <table class="table table-bordered table-striped text-center">
+            <table class="table table-bordered table-striped table-dark text-center">
                 <thead>
                     <tr>
                         <th>Nombre</th>

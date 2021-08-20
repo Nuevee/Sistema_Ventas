@@ -16,7 +16,6 @@ class clientesController extends Controller
     public function clientesform(){
         return view('clientes.clientesform');
     }
-
     //guardar cliente
     public function guardar(Request $request){
         $validator = $this->validate($request, [
@@ -48,3 +47,4 @@ class clientesController extends Controller
         return back()->with('clienteModificado','Cliente Modificado');
     }
 }
+
